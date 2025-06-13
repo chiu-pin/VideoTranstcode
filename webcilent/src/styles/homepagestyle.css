@@ -1,0 +1,115 @@
+.homepage {
+    position: relative; /* 为伪元素定位提供上下文 */
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url("../picture/backgroundphoto.jpg"); /* 指定背景图片 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* 保持背景容器高度不变 */
+
+}
+
+.homepage::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* 创建一个半透明的黑色覆盖层 */
+    z-index: 1;
+}
+
+.homepage > * {
+    position: relative;
+    z-index: 2; /* 确保内容在覆盖层之上 */
+}
+.container {
+    padding: 0;
+    margin: 0;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-form input,
+.login-form button,
+.login-container button {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.login-form button,
+.login-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form button:hover,
+.login-container button:hover {
+    background-color: #0056b3;
+}
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    margin: 5px;
+}
+.signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0; /* 调整输入框之间的空白 */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* 按钮与上面的输入框之间的空白 */
+  }
+  
+  .signup-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .signup-container p {
+    margin-top: 15px; /* 调整消息提示与表单的距离 */
+    color: red; /* 错误消息显示为红色 */
+  }

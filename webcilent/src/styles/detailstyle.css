@@ -1,0 +1,45 @@
+.file-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.file-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.go-home-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

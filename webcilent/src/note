@@ -1,0 +1,23 @@
+const videoSection = document.querySelector("section");
+const loader = document.querySelector('.loader-box'); // 確保loader-box前有點表示class
+
+setTimeout(getVideos, 3000);
+
+function getVideos() { 
+    fetch("https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=15&playlistId=PLLMWJSUqOESOPcf7xZ-G1NaIAf2bGfO3f&key=YOUR_API_KEY")
+    .then((res) => res.json())
+    .then((data) => {
+        loader.style.display = 'none';
+        data.items.forEach((el) => {
+            videoSection.innerHTML += `
+            <a target="_blank" href="https://www.youtube.com/watch?v=${el.snippet.resourceId.videoId}" class="yt-video">
+                <img src="${el.snippet.thumbnails.maxres.url}" />
+                <h3>${el.snippet.title}</h3>
+            </a>`;
+        });
+    }).catch(err => {
+        loader.style.display = 'none';
+        console.log(err);
+        videoSection.innerHTML = '<h3>Sorry, something went wrong. Try again later.</h3>';
+    });
+}

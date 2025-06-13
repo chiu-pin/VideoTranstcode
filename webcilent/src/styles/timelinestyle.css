@@ -1,0 +1,196 @@
+
+.timeline-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.timeline-steps .timeline-step {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 1rem
+}
+@keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 20px, 0);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  
+  .timeline-step {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  
+  .timeline-step.animate {
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+@media (min-width:768px) {
+    .timeline-steps .timeline-step:not(:last-child):after {
+        content: "";
+        display: block;
+        border-top: .25rem dotted rgb(51, 51, 52);
+        width: 3.46rem;
+        position: absolute;
+        left: 7.5rem;
+        top: .3125rem
+    }
+    .timeline-steps .timeline-step:not(:first-child):before {
+        content: "";
+        display: block;
+        border-top: .25rem dotted rgb(51, 51, 52);
+        width: 3.8125rem;
+        position: absolute;
+        right: 7.5rem;
+        top: .3125rem
+    }
+    
+}
+
+.timeline-steps .timeline-content {
+    width: 10rem;
+    text-align: center
+}
+
+.timeline-steps .timeline-content .inner-circle {
+    border-radius: 1.5rem;
+    height: 1rem;
+    width: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d0d0d
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+    content: "";
+    background-color: #4e5157;
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    border-radius: 6.25rem;
+    opacity: .5
+}
+
+.Bothcontainer {
+    display: flex; /* 啟用flexbox */
+    flex-wrap: wrap; /* 允許元素換行 */
+    justify-content: center; /* 水平居中 */
+    gap: 20px; /* 兩個.skill-container之間的間距 */
+  }
+  
+  .skill-container {
+    flex: 1; /* 每個.skill-container都會占用相同的空間 */
+    min-width: 250px; /* 最小寬度，防止元素過小 */
+    max-width: 500px; /* 最大寬度，來限制內容的寬度 */
+  }
+
+.container .skill-box{
+    width: 100%;
+    margin: 25px 0;
+}
+.skill-box .title{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+.skill-box .skill-bar{
+    height: 8px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 6px;
+    background: rgba(15, 14, 14, 0.1);
+}
+.skill-bar .skill-per{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 90%;
+    border-radius: 6px;
+    background: #606265;
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+.skill-per.css{
+    width: 70%;
+    animation-delay: 0.1s;
+}
+.skill-per.javascript{
+    width: 50%;
+    animation-delay: 0.2s;
+}
+.skill-per.nodejs{
+    width: 30%;
+    animation-delay: 0.3s;
+}
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.skill-per .tooltip{
+    position: absolute;
+    right: -14px;
+    top: -28px;
+    font-size: 9px;
+    font-weight: 500;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: #4070f4;
+    z-index: 1;
+}
+.tablecontainer {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* 使用视窗高度确保垂直居中 */
+  }
+  .video-list {
+    display: flex;
+    flex-direction: column; /* 仍旧保持垂直堆叠 */
+    align-items: center; /* 居中对齐每个视频项 */
+    gap: 20px; /* 设置视频项之间的间隔 */
+  }
+  
+  .video-item {
+    display: flex; /* 将每个视频项设置为 flex 容器 */
+    flex-wrap: wrap; /* 允许内容换行 */
+    justify-content: space-between; /* 在项目之间提供一些空间 */
+    align-items: flex-start; /* 对齐项目的起始位置 */
+    gap: 20px; /* 设置内部元素之间的间隔 */
+    width: 100%; /* 视频项宽度 */
+  }
+  
+  .video-item iframe {
+    flex: 1; /* 视频占据剩余空间 */
+    min-width: 250px; /* 最小宽度 */
+    max-width: 480px; /* 最大宽度，取决于您的布局需求 */
+  }
+
+  .video-description {
+    border: 1px solid #ccc; /* 添加灰色边框 */
+    padding: 10px; /* 添加一些内边距 */
+    margin: 10px; /* 如果需要，还可以添加外边距 */
+    /* 其他样式 */
+    flex: 1;
+    min-width: 200px;
+    max-width: 480px;
+    /* 可以添加其他样式来美化框架，如圆角等 */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可选的，添加轻微的阴影效果 */
+    background-color: #fff; /* 可选的，设置背景颜色 */
+  }
